@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-env-deployment
+  labels:
+    app: echo-env
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: echo-env
+  template:
+    metadata:
+      labels:
+        app: echo-env
+    spec:
+      containers:
+        - name: echo-env
+          image: zakale/echo-env:latest
+          ports:
+            - containerPort: 8000
