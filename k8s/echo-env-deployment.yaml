@@ -19,3 +19,7 @@ spec:
           image: zakale/echo-env:latest
           ports:
             - containerPort: 8000
+          env:
+            - name: hello
+              value: olleh
+          
